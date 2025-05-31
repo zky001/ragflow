@@ -50,6 +50,7 @@ from .template import Template, TemplateParam
 from .email import Email, EmailParam
 from .iteration import Iteration, IterationParam
 from .iterationitem import IterationItem, IterationItemParam
+from .mcp_retrieval import MCPRetrieval, MCPRetrievalParam
 
 
 def component_class(class_name):
@@ -65,6 +66,8 @@ __all__ = [
     "GenerateParam",
     "Retrieval",
     "RetrievalParam",
+    "MCPRetrieval",
+    "MCPRetrievalParam",
     "Answer",
     "AnswerParam",
     "Categorize",

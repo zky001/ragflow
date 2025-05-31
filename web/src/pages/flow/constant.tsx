@@ -70,6 +70,7 @@ export const BeginId = 'begin';
 export enum Operator {
   Begin = 'Begin',
   Retrieval = 'Retrieval',
+  MCPRetrieval = 'MCPRetrieval',
   Generate = 'Generate',
   Answer = 'Answer',
   Categorize = 'Categorize',
@@ -112,6 +113,7 @@ export const CommonOperatorList = Object.values(Operator).filter(
 
 export const operatorIconMap = {
   [Operator.Retrieval]: RocketOutlined,
+  [Operator.MCPRetrieval]: RocketOutlined,
   [Operator.Generate]: MergeCellsOutlined,
   [Operator.Answer]: SendOutlined,
   [Operator.Begin]: BeginIcon,
@@ -163,6 +165,10 @@ export const operatorMap: Record<
   }
 > = {
   [Operator.Retrieval]: {
+    backgroundColor: '#cad6e0',
+    color: '#385974',
+  },
+  [Operator.MCPRetrieval]: {
     backgroundColor: '#cad6e0',
     color: '#385974',
   },
@@ -290,6 +296,9 @@ export const operatorMap: Record<
 export const componentMenuList = [
   {
     name: Operator.Retrieval,
+  },
+  {
+    name: Operator.MCPRetrieval,
   },
   {
     name: Operator.Generate,
@@ -665,6 +674,7 @@ export const RestrictedUpstreamMap = {
     Operator.Relevant,
   ],
   [Operator.Retrieval]: [Operator.Begin, Operator.Retrieval],
+  [Operator.MCPRetrieval]: [Operator.Begin, Operator.MCPRetrieval],
   [Operator.Generate]: [Operator.Begin, Operator.Relevant],
   [Operator.Message]: [
     Operator.Begin,
@@ -720,6 +730,7 @@ export const NodeMap = {
   [Operator.Begin]: 'beginNode',
   [Operator.Categorize]: 'categorizeNode',
   [Operator.Retrieval]: 'retrievalNode',
+  [Operator.MCPRetrieval]: 'retrievalNode',
   [Operator.Generate]: 'generateNode',
   [Operator.Answer]: 'logicNode',
   [Operator.Message]: 'messageNode',
