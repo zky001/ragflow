@@ -63,6 +63,7 @@ interface IProps {
 const FormMap = {
   [Operator.Begin]: BeginForm,
   [Operator.Retrieval]: RetrievalForm,
+  [Operator.MCPRetrieval]: RetrievalForm,
   [Operator.Generate]: GenerateForm,
   [Operator.Answer]: AnswerForm,
   [Operator.Categorize]: CategorizeForm,

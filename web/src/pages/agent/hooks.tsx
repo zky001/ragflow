@@ -101,6 +101,7 @@ export const useInitializeOperatorParams = () => {
     return {
       [Operator.Begin]: initialBeginValues,
       [Operator.Retrieval]: initialRetrievalValues,
+      [Operator.MCPRetrieval]: initialRetrievalValues,
       [Operator.Generate]: { ...initialGenerateValues, llm_id: llmId },
       [Operator.Answer]: {},
       [Operator.Categorize]: { ...initialCategorizeValues, llm_id: llmId },

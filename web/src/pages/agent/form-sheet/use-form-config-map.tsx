@@ -80,6 +80,29 @@ export function useFormConfigMap() {
         ),
       }),
     },
+    [Operator.MCPRetrieval]: {
+      component: RetrievalForm,
+      defaultValues: { query: [] },
+      schema: z.object({
+        name: z
+          .string()
+          .min(1, {
+            message: t('common.namePlaceholder'),
+          })
+          .trim(),
+        age: z
+          .string()
+          .min(1, {
+            message: t('common.namePlaceholder'),
+          })
+          .trim(),
+        query: z.array(
+          z.object({
+            type: z.string(),
+          }),
+        ),
+      }),
+    },
     [Operator.Generate]: {
       component: GenerateForm,
       defaultValues: {
